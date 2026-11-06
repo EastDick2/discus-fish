@@ -1,14 +1,14 @@
 # Community-auth instellen
 
-De openbare pagina werkt als statische site; inloggen, onderwerpen en threadreacties gebruiken Supabase Auth en database-RLS.
+Inloggen, onderwerpen en threadreacties gebruiken Supabase Auth en database-RLS. Toegangsaanvragen worden via het formulier op de communitypagina opgeslagen in Supabase; er wordt geen e-mailconcept geopend.
 
-1. Maak een Supabase-project aan.
-2. Zet de Project URL en anon/publishable key in `community-config.js`. Gebruik in browsercode nooit een geheime service-role-key.
-3. Voer `community-schema.sql` uit in de Supabase SQL Editor.
-4. Voer daarna `community-replies-migration.sql` uit om reacties in threads toe te voegen. Deze migratie is herhaalbaar.
-5. Configureer e-mailauthenticatie en stel de toegestane redirect-URL's in op de URL van de gepubliceerde site.
-6. Maak geen open registratie beschikbaar. Maak accounts voor goedgekeurde leden handmatig aan/invite ze in Supabase Authentication. De trigger maakt een profiel aan dat standaard niet is goedgekeurd.
-7. Zet voor goedgekeurde leden `is_approved = true` in `community_profiles`. Geef alleen vertrouwde moderators `is_moderator = true`.
-8. Test met een niet-goedgekeurd account, een goedgekeurd lid en een moderator: alleen leden mogen onderwerpen en reacties lezen en plaatsen; moderators kunnen onderwerpen en reacties verwijderen.
+1. Zet de Supabase Project URL en anon/publishable key in `community-config.js`. Gebruik in browsercode nooit een geheime service-role-key.
+2. Voer `community-schema.sql` en `community-replies-migration.sql` uit in de Supabase SQL Editor als dit nog niet is gedaan.
+3. Voer `community-access-requests-migration.sql` uit om aanvragen via de website en moderatorbeoordeling in te schakelen.
+4. Configureer e-mailauthenticatie en toegestane redirect-URL's op de gepubliceerde site.
+5. Houd publieke accountregistratie uit. De beheerder maakt accounts handmatig aan/invite ze in Supabase Auth.
+6. Goedgekeurde moderators beheren aanvragen op `community-beheer.html`. De RLS-beveiliging laat alleen goedgekeurde moderators aanvragen lezen en beoordelen; gewone bezoekers kunnen alleen een nieuwe aanvraag indienen.
+7. Na goedkeuring van een aanvraag maakt/invite de beheerder het account in Supabase Auth en zet het profiel apart op `is_approved = true`. Geef uitsluitend vertrouwde moderators `is_moderator = true`.
+8. Test aanvragen, toegang, threadreacties en moderatorbevoegdheden met aparte testaccounts.
 
-Toegangsaanvragen openen een e-mailconcept voor `ardi.oostdijk@gmail.com`; de aanvraag wordt niet automatisch verzonden of opgeslagen.
+De aanvraag wordt opgeslagen in de Supabase-database. De publieke website toont geen lijst met aanvragers of hun e-mailadressen.
