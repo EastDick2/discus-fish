@@ -2,5 +2,5 @@
 // Never put a service_role or secret key in this file.
 window.DISCUS_SUPABASE_CONFIG = {
   url: "https://thvsvmhwnqzpwvhzdecy.supabase.co",
-  anonKey: "YOUR_SUPABASE_ANON_OR_PUBLISHABLE_KEY"
+  anonKey: "sb_publishable_0AkLakFpE0UOzEC74mXhEA_VmuJ-Zjn"
 };
