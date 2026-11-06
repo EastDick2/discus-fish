@@ -1,14 +1,14 @@
 # Community-auth instellen
 
-Inloggen, onderwerpen en threadreacties gebruiken Supabase Auth en database-RLS. Toegangsaanvragen worden via het formulier op de communitypagina opgeslagen in Supabase; er wordt geen e-mailconcept geopend.
+De openbare community gebruikt Supabase Auth en database-RLS. Bezoekers kunnen op `community.html` een aanvraag én account indienen; accounts hebben standaard geen toegang tot gesprekken totdat een moderator ze goedkeurt.
 
-1. Zet de Supabase Project URL en anon/publishable key in `community-config.js`. Gebruik in browsercode nooit een geheime service-role-key.
-2. Voer `community-schema.sql` en `community-replies-migration.sql` uit in de Supabase SQL Editor als dit nog niet is gedaan.
-3. Voer `community-access-requests-migration.sql` uit om aanvragen via de website en moderatorbeoordeling in te schakelen.
-4. Configureer e-mailauthenticatie en toegestane redirect-URL's op de gepubliceerde site.
-5. Houd publieke accountregistratie uit. De beheerder maakt accounts handmatig aan/invite ze in Supabase Auth.
-6. Goedgekeurde moderators beheren aanvragen op `community-beheer.html`. De RLS-beveiliging laat alleen goedgekeurde moderators aanvragen lezen en beoordelen; gewone bezoekers kunnen alleen een nieuwe aanvraag indienen.
-7. Na goedkeuring van een aanvraag maakt/invite de beheerder het account in Supabase Auth en zet het profiel apart op `is_approved = true`. Geef uitsluitend vertrouwde moderators `is_moderator = true`.
-8. Test aanvragen, toegang, threadreacties en moderatorbevoegdheden met aparte testaccounts.
+1. Zet de Supabase Project URL en anon/publishable key in `community-config.js`. Gebruik in browsercode nooit een service-role-key.
+2. Voer `community-schema.sql`, `community-replies-migration.sql` en `community-access-requests-migration.sql` uit in de Supabase SQL Editor.
+3. Schakel in Supabase Auth email/password sign-ups in. Houd e-mailbevestiging aan en configureer de bevestigingsredirect naar `https://<jouwdomein>/discussieruimte.html`.
+4. Configureer een eigen SMTP-provider in Supabase Auth > SMTP Settings om bevestigings- en wachtwoordresetmails betrouwbaar te laten bezorgen. De standaard testmailservice van Supabase is beperkt; controleer ook spam en Auth Logs.
+5. Voeg `https://<jouwdomein>/**` en de exacte bevestigings- en reset-URL's toe aan Auth URL Configuration > Redirect URLs.
+6. Aanvragen verschijnen in `community-beheer.html`. Na goedkeuring moet een moderator/beheerder het aangemaakte profiel op `is_approved = true` zetten in `community_profiles`. De gebruiker bevestigt het e-mailadres via de Auth-mail en kan daarna met het bij de aanvraag gekozen wachtwoord inloggen.
+7. Publieke accounts zijn standaard niet goedgekeurd; RLS verhindert hen gesprekken te lezen, plaatsen of beantwoorden. Geef uitsluitend vertrouwde moderators `is_moderator = true`.
+8. Test aanvragen, bevestigingsmails, wachtwoordherstel, goedkeuring en RLS met aparte testaccounts.
 
-De aanvraag wordt opgeslagen in de Supabase-database. De publieke website toont geen lijst met aanvragers of hun e-mailadressen.
+Aanvragen worden in Supabase opgeslagen. Het wachtwoord wordt uitsluitend verwerkt door Supabase Auth; het wordt niet opgenomen in de aanvraag.
