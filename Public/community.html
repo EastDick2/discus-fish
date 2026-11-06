@@ -1,1 +1,111 @@
-<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Een gemodereerde community voor discusliefhebbers. Lees de regels en vraag toegang aan."><title>Community — Discuswereld</title><link rel="stylesheet" href="site.css"></head><body><header class="topbar"><nav class="nav wrap"><a class="brand" href="index.html"><b>◉</b>Discuswereld</a><div class="navlinks"><a href="index.html">Home</a><a href="houden.html">Houden</a><a href="kweken.html">Kweken</a><a class="join active" href="community.html">Community</a></div></nav></header><section class="hero"><div class="wrap"><div class="crumb"><a href="index.html">Home</a> / Community</div><div class="eyebrow">Voor en door liefhebbers</div><h1>Deel de hobby. Leer van elkaar.</h1><p>Een respectvolle plek om ervaringen en vragen uit te wisselen over discusvissen houden, aquariumtechniek, verzorging, kweek en energieverbruik.</p></div></section><main><div class="wrap layout"><article class="article"><h2 id="topics">Waar praten we over?</h2><div class="factors"><div class="factor"><strong>Houden & verzorgen</strong>Waterkwaliteit, voeding, gedrag en dagelijkse routines.</div><div class="factor"><strong>Kweek</strong>Ervaringen met koppels, voorbereiding en opgroeiende jongen.</div><div class="factor"><strong>Aquarium & techniek</strong>Inrichting, filters, verwarming en praktische oplossingen.</div><div class="factor"><strong>Energie besparen</strong>Ervaringen met isolatie, deksels en efficiënt verwarmen, met oog voor viswelzijn.</div></div><p class="energy-note">Deel concrete ervaringen en metingen. Zet verwarming of filtratie niet uit en verlaag de temperatuur niet onder de veilige behoefte van de vissen om energie te besparen.</p><div class="community-callout"><div class="eyebrow">Praat mee</div><h2>De discussieruimte</h2><p>Start een onderwerp of reageer in threads met andere goedgekeurde leden. Inloggen is vereist.</p><a class="button" href="discussieruimte.html">Naar de discussieruimte →</a></div><h2 id="rules">Communityregels</h2><p>Door mee te doen ga je akkoord met deze afspraken:</p><ol class="rules"><li><strong>Respecteer elkaar.</strong> Geen persoonlijke aanvallen, intimidatie, discriminatie of scheldpartijen.</li><li><strong>Deel kennis eerlijk.</strong> Maak onderscheid tussen ervaring, mening en gecontroleerde informatie.</li><li><strong>Viswelzijn staat voorop.</strong> Geen onverantwoorde bezetting, abrupte watercorrecties of medicatie zonder diagnose.</li><li><strong>Gezondheidsadvies zorgvuldig.</strong> Stel geen stellige diagnose op afstand; verwijs bij serieuze klachten naar een dierenarts met kennis van vissen.</li><li><strong>Kweek verantwoord.</strong> Denk aan ruimte, gezondheid en een goede bestemming voor jongen; zet vissen nooit uit in natuurwater.</li><li><strong>Energietips moeten veilig zijn.</strong> Bespaar waar mogelijk zonder verwarming, filtratie of dierenwelzijn in gevaar te brengen.</li><li><strong>Geen spam of ongewenste reclame.</strong> Vraag toestemming voor commerciële links en promotie.</li><li><strong>Bescherm privacy.</strong> Deel geen persoonsgegevens of privéberichten van anderen zonder toestemming.</li><li><strong>Moderators bewaken de sfeer.</strong> Zij kunnen bijdragen verwijderen en toegang intrekken bij overtredingen.</li></ol><h2 id="access">Toegang aanvragen</h2><p>De community is alleen voor leden die door de beheerder zijn goedgekeurd. Vul je gegevens in en geef aan waar je graag over wilt praten. De beheerder beoordeelt de aanvraag en neemt contact met je op.</p><form class="form-card" id="join-form"><label for="join-name">Naam of forumnaam</label><input id="join-name" name="name" autocomplete="name" required maxlength="80"><label for="join-email">E-mailadres</label><input id="join-email" name="email" type="email" autocomplete="email" required maxlength="160"><label for="interest">Waar wil je over meepraten? (optioneel)</label><textarea id="interest" name="interest" rows="3" maxlength="500" placeholder="Bijvoorbeeld: kweek, verzorging of energiebesparing"></textarea><label class="consent"><input id="agree" name="agree" type="checkbox" required><span>Ik heb de communityregels gelezen en ga ermee akkoord. Ik begrijp dat toegang pas volgt na goedkeuring.</span></label><button class="button" type="submit">Toegang aanvragen per e-mail</button><p class="notice" id="join-note" aria-live="polite">Je e-mailprogramma opent een concept dat je zelf kunt controleren en versturen.</p></form><div class="related"><h2>Begin met de basis</h2><p>Bekijk de gidsen over houden, verzorgen en verantwoord kweken.</p><a class="button" href="houden.html">Naar de houdgids →</a></div></article><aside class="aside"><h2>Community</h2><a href="#topics">Onderwerpen</a><a href="discussieruimte.html">Discussieruimte</a><a href="#rules">De regels</a><a href="#access">Toegang aanvragen</a></aside></div></main><footer><div class="foot wrap"><a href="index.html">← Terug naar Discuswereld</a><span>Respect, viswelzijn en goede informatie staan voorop.</span></div></footer><script>document.getElementById('join-form').addEventListener('submit',event=>{event.preventDefault();if(!event.currentTarget.reportValidity())return;const name=document.getElementById('join-name').value.trim(),email=document.getElementById('join-email').value.trim(),interest=document.getElementById('interest').value.trim()||'Geen onderwerp opgegeven';const subject=encodeURIComponent('Toegangsverzoek Discuswereld community');const body=encodeURIComponent('Naam/forumnaam: '+name+'\nE-mailadres: '+email+'\nOnderwerp(en): '+interest+'\n\nIk heb de communityregels gelezen en ga ermee akkoord.');location.href='mailto:ardi.oostdijk@gmail.com?subject='+subject+'&body='+body;document.getElementById('join-note').textContent='Controleer het e-mailconcept en verstuur het zelf. De beheerder neemt na beoordeling contact met je op.'});</script></body></html>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Community voor discusliefhebbers: lees de regels en vraag toegang aan.">
+  <meta name="theme-color" content="#edf7f4">
+  <title>Community — Discuswereld</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Hoofdnavigatie">
+      <a class="brand" href="index.html"><b>◉</b>Discuswereld</a>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="houden.html">Houden</a>
+        <a href="kweken.html">Kweken</a>
+        <a class="join active" href="community.html">Community</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">Home</a> / Community</div>
+      <div class="eyebrow">Voor en door liefhebbers</div>
+      <h1>Deel de hobby. Leer van elkaar.</h1>
+      <p>Een respectvolle plek om ervaringen en vragen uit te wisselen over discusvissen houden, aquariumtechniek, verzorging, kweek en energieverbruik.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap layout">
+      <article class="article">
+        <h2 id="topics">Waar praten we over?</h2>
+        <div class="factors">
+          <div class="factor"><strong>Houden & verzorgen</strong>Waterkwaliteit, voeding, gedrag en dagelijkse routines.</div>
+          <div class="factor"><strong>Kweek</strong>Ervaringen met koppels, voorbereiding en opgroeiende jongen.</div>
+          <div class="factor"><strong>Aquarium & techniek</strong>Inrichting, filters, verwarming en praktische oplossingen.</div>
+          <div class="factor"><strong>Energie besparen</strong>Ervaringen met isolatie, deksels en efficiënt verwarmen, met oog voor viswelzijn.</div>
+        </div>
+        <p class="energy-note">Deel concrete ervaringen en metingen. Zet verwarming of filtratie niet uit en verlaag de temperatuur niet onder de veilige behoefte van de vissen om energie te besparen.</p>
+
+        <section class="community-callout" aria-labelledby="discussion-heading">
+          <div class="eyebrow">Praat mee</div>
+          <h2 id="discussion-heading">De discussieruimte</h2>
+          <p>Start een onderwerp of reageer in threads met andere goedgekeurde leden. De discussieruimte staat op een aparte pagina.</p>
+          <a class="button" href="discussieruimte.html">Naar de discussieruimte →</a>
+        </section>
+
+        <h2 id="rules">Communityregels</h2>
+        <p>Door mee te doen ga je akkoord met deze afspraken:</p>
+        <ol class="rules">
+          <li><strong>Respecteer elkaar.</strong> Geen persoonlijke aanvallen, intimidatie, discriminatie of scheldpartijen.</li>
+          <li><strong>Deel kennis eerlijk.</strong> Maak onderscheid tussen ervaring, mening en gecontroleerde informatie.</li>
+          <li><strong>Viswelzijn staat voorop.</strong> Geen onverantwoorde bezetting, abrupte watercorrecties of medicatie zonder diagnose.</li>
+          <li><strong>Gezondheidsadvies zorgvuldig.</strong> Stel geen stellige diagnose op afstand; verwijs bij serieuze klachten naar een dierenarts met kennis van vissen.</li>
+          <li><strong>Kweek verantwoord.</strong> Denk aan ruimte, gezondheid en een goede bestemming voor jongen; zet vissen nooit uit in natuurwater.</li>
+          <li><strong>Energietips moeten veilig zijn.</strong> Bespaar waar mogelijk zonder verwarming, filtratie of dierenwelzijn in gevaar te brengen.</li>
+          <li><strong>Geen spam of ongewenste reclame.</strong> Vraag toestemming voor commerciële links en promotie.</li>
+          <li><strong>Bescherm privacy.</strong> Deel geen persoonsgegevens of privéberichten van anderen zonder toestemming.</li>
+          <li><strong>Moderators bewaken de sfeer.</strong> Zij kunnen bijdragen verwijderen en toegang intrekken bij overtredingen.</li>
+        </ol>
+
+        <h2 id="access">Toegang aanvragen</h2>
+        <p>De discussieruimte is alleen toegankelijk voor leden die door de beheerder zijn goedgekeurd. Vul je gegevens in en geef aan waar je graag over wilt praten. De beheerder beoordeelt de aanvraag en neemt contact met je op.</p>
+        <form class="form-card" id="join-form">
+          <label for="join-name">Naam of forumnaam</label>
+          <input id="join-name" name="name" autocomplete="name" required maxlength="80">
+          <label for="join-email">E-mailadres</label>
+          <input id="join-email" name="email" type="email" autocomplete="email" required maxlength="160">
+          <label for="interest">Waar wil je over meepraten? (optioneel)</label>
+          <textarea id="interest" name="interest" rows="3" maxlength="500" placeholder="Bijvoorbeeld: kweek, verzorging of energiebesparing"></textarea>
+          <label class="consent"><input id="agree" name="agree" type="checkbox" required><span>Ik heb de communityregels gelezen en ga ermee akkoord. Ik begrijp dat toegang pas volgt na goedkeuring.</span></label>
+          <button class="button" type="submit">Toegang aanvragen per e-mail</button>
+          <p class="notice" id="join-note" aria-live="polite">Je e-mailprogramma opent een concept dat je zelf kunt controleren en versturen.</p>
+        </form>
+
+        <div class="related">
+          <h2>Begin met de basis</h2>
+          <p>Bekijk de gidsen over houden, verzorgen en verantwoord kweken.</p>
+          <a class="button" href="houden.html">Naar de houdgids →</a>
+        </div>
+      </article>
+      <aside class="aside">
+        <h2>Community</h2>
+        <a href="#topics">Onderwerpen</a>
+        <a href="discussieruimte.html">Discussieruimte</a>
+        <a href="#rules">De regels</a>
+        <a href="#access">Toegang aanvragen</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer><div class="foot wrap"><a href="index.html">← Terug naar Discuswereld</a><span>Respect, viswelzijn en goede informatie staan voorop.</span></div></footer>
+  <script>
+    document.getElementById('join-form').addEventListener('submit', event => {
+      event.preventDefault();
+      if (!event.currentTarget.reportValidity()) return;
+      const name = document.getElementById('join-name').value.trim();
+      const email = document.getElementById('join-email').value.trim();
+      const interest = document.getElementById('interest').value.trim() || 'Geen onderwerp opgegeven';
+      const subject = encodeURIComponent('Toegangsverzoek Discuswereld community');
+      const body = encodeURIComponent(`Naam/forumnaam: ${name}\nE-mailadres: ${email}\nOnderwerp(en): ${interest}\n\nIk heb de communityregels gelezen en ga ermee akkoord.`);
+      location.href = `mailto:ardi.oostdijk@gmail.com?subject=${subject}&body=${body}`;
+      document.getElementById('join-note').textContent = 'Controleer het e-mailconcept en verstuur het zelf. De beheerder neemt na beoordeling contact met je op.';
+    });
+  </script>
+</body>
+</html>
